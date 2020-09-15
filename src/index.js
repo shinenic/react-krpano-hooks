@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { getOperations } from './operations'
+import {
+  warnIfInvalidEmbeddingParams,
+  warnIfInvalidExternalFncOption,
+} from './log'
 import useKrpanoScript from './useKrpanoScript'
 
 const KRPANO_SCRIPT_PATH = 'krpano/krpano.js'
@@ -54,6 +58,11 @@ const useKrpano = ({
   const onStart = () => {
     setKrpanoState((state) => ({ ...state, isLoaded: true }))
   }
+
+  useEffect(() => {
+    warnIfInvalidEmbeddingParams(embeddingParams)
+    warnIfInvalidExternalFncOption(externalFnc)
+  }, []) // eslint-disable-line
 
   useEffect(() => {
     if (scriptLoaded && containerRef.current) {
