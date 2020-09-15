@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "react": "^16.13.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   }
 }
