@@ -1,0 +1,14 @@
+{
+  "name": "react-krpano-hooks",
+  "version": "1.0.0",
+  "description": "A package migrates KRPano into React as a hook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Wei",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.13.1"
+  }
+}
