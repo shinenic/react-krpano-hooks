@@ -63,7 +63,7 @@ example.js
 ```jsx
 const Example = () => {
   const { containerRef } = useKrpano({
-    externalFnc: {
+    globalFunctions: {
       logNewScene: (scene) => {
         console.log('New scene: ', scene)
       },
@@ -151,10 +151,10 @@ const {
 | --------------- | -------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | scriptPath      | String   | Path of script provided by krpano, default is `'krpano/krpano.js'`                                                                                                                                                                             |
 | embeddingParams | Object   | [Krpano embedding params](https://krpano.com/docu/html/#top), the script will embed again when these params change, default is `{xml: 'krpano/tour.xml', target: 'react-krpano', html: 'prefer'}`<br/><br/>Note: `react-krpano-hooks` have `onready` param already, so set `onready` into hooks will not work, you can set `handleLoaded` in option to execute function after embedding completed                                                                                                                                             |
-| scriptOption    | Object   | Script options, default is `{async: true}`                                                                                                                                                                                               |
+| scriptOptions   | Object   | Script options, default is `{async: true}`                                                                                                                                                                                               |
 | handleLoaded    | Function | Execute when embedding finished                                                                                                                                                                               |
+| globalFunctions | Object   | Functions in this object will be registered as `js global variables`,<br/>you can call `jscall(reactKrpano.customFnc())` (or other name you assign in `globalVarName`)  in xml to execute global function<br/><br/>Note: `react-krpano-hooks` have `onStart` global function already, so set `onStart` into hooks will not work  |
 | globalVarName   | String   | Variable name used for global functions,<br/>default is `'reactKrpano'`                                                                                                                                             |
-| externalFnc     | Function | Functions in this object will be registered as `js global variables`,<br/>you can call `jscall(reactKrpano.customFnc())` (or other name you assign in `globalVarName`)  in xml to execute global function<br/><br/>Note: `react-krpano-hooks` have `onStart` global function already, so set `onStart` into hooks will not work  |
 
 
 
@@ -209,6 +209,9 @@ Use the `calc()` action to build the Javascript call and pass krpano variables, 
   ...
 </action>
 ```
+
+## Change log
+[v1.1.0](https://github.com/shinenic/react-krpano-hooks/blob/master/CHANGELOG.md)
 
 ## Credits
 `react-krpano-hooks` is mainly inspired by [react-krpano](https://github.com/browniu/react-krpano)
