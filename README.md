@@ -32,11 +32,12 @@ root
 │   └───krpano
 │       │   krpano.js
 │       │   tour.xml
-│       │   ...
+|       |   (plugings, panos, ...)
 ...
 ```
 
-* In `tour.xml`, put `onstart="jscall(reactKrpano.onStart())"` in <krpano> to enable react-useKrpano
+* In `tour.xml`, put `onstart="jscall(reactKrpano.onStart())"` in <krpano> to enable `react-krpano-hooks`
+(In some cases, you may need to change your `url` in `xml` if you get `xml parsing failed` from KRPano, see [placeholder](#Krpano-module-load-failed) for more information)
 ```xml
 <krpano ... onstart="jscall(reactKrpano.onStart())">
   ...
@@ -160,7 +161,7 @@ const {
 ## Appendix and FAQ
 
 ### Krpano module load failed
-Please check the `url` in `xml`, you can use krpano's placeholders to set correct url,
+Please check the `url` in `xml`, you can use krpano's placeholders to set the correct url,
 according to your folder structure in `/public`, for example:
 ```
 root
@@ -183,7 +184,7 @@ root
 - `%VIEWER%`: Path to the folder of the core krpano viewer file.
 <br/>eg. `url="%VIEWER%/plugins/webvr.xml"`
 
-For completed url attributes list, you can follow [here](https://krpano.com/docu/xml/#url)
+For the completed url attributes list, you can follow [here](https://krpano.com/docu/xml/#url)
 
 ### Get global javascript function & variable from `xml`
 Please ref [jscall](https://krpano.com/docu/actions/#jscall) and [jsget](https://krpano.com/docu/actions/#jsget)
