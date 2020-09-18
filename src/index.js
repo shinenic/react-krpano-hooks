@@ -29,7 +29,7 @@ const DEFAULT_SCRIPT_OPTION = {
 const useKrpano = ({
   scriptPath = KRPANO_SCRIPT_PATH,
   embeddingParams = {},
-  scriptOption = {},
+  scriptOptions = {},
   handleLoaded,
   globalFunctions = {},
   globalVarName = DEFAULT_GLOBAL_VAR_NAME,
@@ -37,7 +37,7 @@ const useKrpano = ({
   const containerRef = useRef(null)
   const [scriptLoaded, scriptError] = useKrpanoScript(scriptPath, {
     ...DEFAULT_SCRIPT_OPTION,
-    ...scriptOption,
+    ...scriptOptions,
   })
   const [krpanoInterface, setKrpanoInterface] = useState(null)
   const embeddingParamsJsonString = JSON.stringify(embeddingParams)
