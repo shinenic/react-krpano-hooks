@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { getOperations } from './operations'
 import {
   warnIfInvalidEmbeddingParams,
-  warnIfInvalidExternalFncOption,
+  warnIfInvalidGlobalFunctions,
 } from './log'
 import useKrpanoScript from './useKrpanoScript'
 
@@ -31,8 +31,8 @@ const useKrpano = ({
   embeddingParams = {},
   scriptOption = {},
   handleLoaded,
+  globalFunctions = {},
   globalVarName = DEFAULT_GLOBAL_VAR_NAME,
-  externalFnc = {},
 }) => {
   const containerRef = useRef(null)
   const [scriptLoaded, scriptError] = useKrpanoScript(scriptPath, {
@@ -61,14 +61,14 @@ const useKrpano = ({
 
   useEffect(() => {
     warnIfInvalidEmbeddingParams(embeddingParams)
-    warnIfInvalidExternalFncOption(externalFnc)
+    warnIfInvalidGlobalFunctions(globalFunctions)
   }, []) // eslint-disable-line
 
   useEffect(() => {
     if (scriptLoaded && containerRef.current) {
       resetKrpanoState()
       containerRef.current.id = DEFAULT_TARGET_ID
-      window[globalVarName] = { ...externalFnc, onStart }
+      window[globalVarName] = { ...globalFunctions, onStart }
       window.embedpano({
         ...DEFAULT_EMBEDDING_PARAMS,
         ...embeddingParams,

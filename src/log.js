@@ -8,8 +8,8 @@ export const warnIfInvalidEmbeddingParams = (embeddingParams = {}) => {
   }
 }
 
-export const warnIfInvalidExternalFncOption = (externalFnc = {}) => {
-  if (Boolean(externalFnc.onStart)) {
+export const warnIfInvalidGlobalFunctions = (globalFunctions = {}) => {
+  if (Boolean(globalFunctions.onStart)) {
     console.warn(
       `"React-use-krpano" have "onStart" global function already, ` +
         `so set "onStart" into hooks will not work.`
