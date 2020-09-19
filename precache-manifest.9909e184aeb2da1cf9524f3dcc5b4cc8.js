@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "003da250941b776454416ee2c0e4622d",
+    "revision": "6fdd45ac24c824323cfffbe3d42dd0bb",
     "url": "/react-krpano-hooks/index.html"
   },
   {
