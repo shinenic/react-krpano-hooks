@@ -9,9 +9,13 @@ React-krpano-hooks
 * krpano script >= 1.20.7
 
 ## Installation
-
+* npm
 ```
 npm install react-krpano-hooks
+```
+* yarn
+```
+yarn add react-krpano-hooks
 ```
 
 ## Demo
