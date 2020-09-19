@@ -34,6 +34,8 @@ const useKrpano = (options = {}) => {
     handleLoaded,
     globalFunctions = {},
     globalVarName = DEFAULT_GLOBAL_VAR_NAME,
+    height = '100vh',
+    width = '100vw',
   } = options
 
   const containerRef = useRef(null)
@@ -67,9 +69,21 @@ const useKrpano = (options = {}) => {
   }, []) // eslint-disable-line
 
   useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.id = DEFAULT_TARGET_ID
+    }
+  }, [containerRef.current])
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.style.height = height
+      containerRef.current.style.width = width
+    }
+  }, [height, width])
+
+  useEffect(() => {
     if (scriptLoaded && containerRef.current) {
       resetKrpanoState()
-      containerRef.current.id = DEFAULT_TARGET_ID
       window[globalVarName] = { ...globalFunctions, onStart }
       window.embedpano({
         ...DEFAULT_EMBEDDING_PARAMS,
