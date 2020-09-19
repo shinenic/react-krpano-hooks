@@ -51,7 +51,7 @@ import useKrpano from 'react-krpano-hooks'
 const KrpanoExample = () => {
   const { containerRef } = useKrpano()
 
-  return <div ref={containerRef} style={{ width: '100%', height: '100%' }} />
+  return <div ref={containerRef} />
 }
 ```
 
@@ -147,14 +147,16 @@ const {
 
 ### Option Props
 
-| Name            | Type     | Description                                                                                                                                                                                                   |
-| --------------- | -------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| scriptPath      | String   | Path of script provided by krpano, default is `'krpano/krpano.js'`                                                                                                                                                                             |
-| embeddingParams | Object   | [Krpano embedding params](https://krpano.com/docu/html/#top), the script will embed again when these params change, default is `{xml: 'krpano/tour.xml', target: 'react-krpano', html: 'prefer'}`<br/><br/>Note: `react-krpano-hooks` have `onready` param already, so set `onready` into hooks will not work, you can set `handleLoaded` in option to execute function after embedding completed                                                                                                                                             |
-| scriptOptions   | Object   | Script options, default is `{async: true}`                                                                                                                                                                                               |
-| handleLoaded    | Function | Execute when embedding finished                                                                                                                                                                               |
-| globalFunctions | Object   | Functions in this object will be registered as `js global variables`,<br/>you can call `jscall(reactKrpano.customFnc())` (or other name you assign in `globalVarName`)  in xml to execute global function<br/><br/>Note: `react-krpano-hooks` have `onStart` global function already, so set `onStart` into hooks will not work  |
-| globalVarName   | String   | Variable name used for global functions,<br/>default is `'reactKrpano'`                                                                                                                                             |
+| Name            | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                       |
+| --------------- | -------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scriptPath      | String   | Path of script provided by krpano, default is `'krpano/krpano.js'`                                                                                                                                                                                                                                                                                                                                |
+| embeddingParams | Object   | [Krpano embedding params](https://krpano.com/docu/html/#top), the script will embed again when these params change, default is `{xml: 'krpano/tour.xml', target: 'react-krpano', html: 'prefer'}`<br/><br/>Note: `react-krpano-hooks` have `onready` param already, so set `onready` into hooks will not work, you can set `handleLoaded` in option to execute function after embedding completed |
+| scriptOptions   | Object   | Script options, default is `{async: true}`                                                                                                                                                                                                                                                                                                                                                        |
+| handleLoaded    | Function | Execute when embedding finished                                                                                                                                                                                                                                                                                                                                                                   |
+| globalFunctions | Object   | Functions in this object will be registered as `js global variables`,<br/>you can call `jscall(reactKrpano.customFnc())` (or other name you assign in `globalVarName`)  in xml to execute global function<br/><br/>Note: `react-krpano-hooks` have `onStart` global function already, so set `onStart` into hooks will not work                                                                   |
+| globalVarName   | String   | Variable name used for global functions,<br/>default is `'reactKrpano'`                                                                                                                                                                                                                                                                                                                           |
+| height                |  String        |  KRPano continer's height, default is `100vh`                                                                                                                                                                                                                                                                                                                                                                                               |
+| width               |  String        |  KRPano continer's width, default is `100vw`                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 
 
@@ -210,8 +212,21 @@ Use the `calc()` action to build the Javascript call and pass krpano variables, 
 </action>
 ```
 
+### Custom styles
+In addition to passing height & width into options, you can directly set inline style and classes in your jsx dom, for example:
+```jsx
+const KrpanoExample = () => {
+  const { containerRef } = useKrpano({
+    height: '50vh',
+    width: '50vw'
+  })
+
+  return <div ref={containerRef} style={{ position: 'relative', top: '10px' }} className="custom-styles" />
+}
+```
+
 ## Change log
-[v1.1.0](https://github.com/shinenic/react-krpano-hooks/blob/master/CHANGELOG.md)
+[v1.1.1](https://github.com/shinenic/react-krpano-hooks/blob/master/CHANGELOG.md)
 
 ## Credits
 `react-krpano-hooks` is mainly inspired by [react-krpano](https://github.com/browniu/react-krpano)
