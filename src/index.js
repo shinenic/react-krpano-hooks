@@ -26,14 +26,16 @@ const DEFAULT_SCRIPT_OPTION = {
  * Krpano javascript interface: https://krpano.com/docu/js/#interfaceobject
  * Krpano call external script: https://krpano.com/docu/actions/#jscall
  */
-const useKrpano = ({
-  scriptPath = KRPANO_SCRIPT_PATH,
-  embeddingParams = {},
-  scriptOptions = {},
-  handleLoaded,
-  globalFunctions = {},
-  globalVarName = DEFAULT_GLOBAL_VAR_NAME,
-}) => {
+const useKrpano = (options = {}) => {
+  const {
+    scriptPath = KRPANO_SCRIPT_PATH,
+    embeddingParams = {},
+    scriptOptions = {},
+    handleLoaded,
+    globalFunctions = {},
+    globalVarName = DEFAULT_GLOBAL_VAR_NAME,
+  } = options
+
   const containerRef = useRef(null)
   const [scriptLoaded, scriptError] = useKrpanoScript(scriptPath, {
     ...DEFAULT_SCRIPT_OPTION,
