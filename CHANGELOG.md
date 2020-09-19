@@ -1,5 +1,8 @@
 # React-krpano-hooks Change log
 
+## `v1.1.2` - Released on 2020/09/19
+  * Remove unused files
+
 ## `v1.1.1` - Released on 2020/09/19
   * Add `height` & `width` option for custom container size
   * Fix error when no options in hooks

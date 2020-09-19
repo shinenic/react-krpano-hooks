@@ -230,7 +230,7 @@ const KrpanoExample = () => {
 ```
 
 ## Change log
-[v1.1.1](https://github.com/shinenic/react-krpano-hooks/blob/master/CHANGELOG.md)
+[change log](https://github.com/shinenic/react-krpano-hooks/blob/master/CHANGELOG.md)
 
 ## Credits
 `react-krpano-hooks` is mainly inspired by [react-krpano](https://github.com/browniu/react-krpano)

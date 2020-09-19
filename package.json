@@ -1,6 +1,6 @@
 {
   "name": "react-krpano-hooks",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A package migrates KRPano into React as a hook",
   "author": "Tim Wei <galadiya41@gmail.com>",
   "license": "MIT",
