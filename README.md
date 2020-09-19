@@ -18,9 +18,10 @@ npm install react-krpano-hooks
 yarn add react-krpano-hooks
 ```
 
-## Demo
+## Demo & Example
 
 [React-krpano-hooks](https://shinenic.github.io/react-krpano-hooks/)
+(Source from KRPano's official example [demotour-winecellar](https://krpano.com/releases/1.20.8/examples/#demotour-winecellar))
 
 ## Usage
 
