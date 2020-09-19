@@ -20,7 +20,7 @@ yarn add react-krpano-hooks
 
 ## Demo
 
-TBD
+[React-krpano-hooks](https://shinenic.github.io/react-krpano-hooks/)
 
 ## Usage
 
