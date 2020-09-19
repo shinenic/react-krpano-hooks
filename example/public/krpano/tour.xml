@@ -32,6 +32,13 @@
 		  );
 	</action>
 
+  <events onnewscene="jscall(calc('reactKrpano.logScene(`' + get(xml.scene) + '`)'))" /> 
+
+  <action name="toggleHotspotVisibility">
+		for(set(i,0), i LT hotspot.count, inc(i),
+			set(hotspot[get(i)].visible, %1);
+		);
+	</action>
 
 
 	<!-- the tour scenes -->

@@ -1,0 +1,143 @@
+.demo-page {
+  height: 100%;
+  width: 100%;
+
+  .menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: 700px) {
+      padding: 20px 0 20px 20px;
+      height: 200px;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .scene-name {
+      font-size: 16px;
+      height: 40px;
+      line-height: 40px;
+      padding: 0 12px;
+      border: none;
+      font-weight: bold;
+      color: #eee;
+      text-decoration: none;
+      margin-left: 80px;
+
+      @media only screen and (max-width: 700px) {
+        margin-left: 10px;
+      }
+    }
+
+    a,
+    button {
+      font-size: 16px;
+      height: 40px;
+      line-height: 40px;
+      background-color: #ccc;
+      padding: 0 12px;
+      border: none;
+      border-radius: 3px;
+      color: black;
+      text-decoration: none;
+      margin-left: 16px;
+      cursor: pointer;
+
+      @media only screen and (max-width: 700px) {
+        margin-bottom: 16px;
+        height: 30px;
+        line-height: 30px;
+      }
+
+      &.disable {
+        background-color: #777;
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .github-link {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    height: 40px;
+    width: 40px;
+
+    & > img {
+      height: 90%;
+      width: 90%;
+      transform: translate(5%, 5%);
+    }
+  }
+}
+
+@keyframes spinning {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.loading-page {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #333;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &--fade-out {
+    animation: fadeOut 0.6s linear 1 both 0.4s;
+  }
+
+  .hint {
+    color: #eee;
+    font-size: 40px;
+  }
+
+  .loading-spin {
+    width: 40px;
+    height: 40px;
+    border: 5px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+
+    animation: spinning 1s linear infinite;
+    box-sizing: content-box;
+
+    position: relative;
+    top: 50px;
+    left: 20px;
+  }
+}
