@@ -138,8 +138,8 @@ const {
 | -------------------------- | -------- |:----------------------------------------------------------------------------------------------- |
 | krpanoState.scriptLoaded   | Boolean  | `True` when the krpano script is loaded                                                         |
 | krpanoState.isEmbedded     | Boolean  | `True` when the embedding is done,<br/>but the xml haven't finished yet                         |
-| krpanoStart.isLoaded       | Boolean  | `True` after the xml loaded and parsed                                                          |
-| krpanoStart.error          | String   | Error message from krpano xml,<br/>will be `null` when no error                                 |
+| krpanoState.isLoaded       | Boolean  | `True` after the xml loaded and parsed                                                          |
+| krpanoState.error          | String   | Error message from krpano xml,<br/>will be `null` when no error                                 |
 | setKrpano(variable, value) | Function | [Set](https://krpano.com/docu/js/#interfaceobject) the given krpano variable to the given value |
 | getKrpano(variable)        | Function | [Return](https://krpano.com/docu/js/#interfaceobject) the value of the given krpano variable    |
 | callKrpano(action)         | Function | [Call](https://krpano.com/docu/js/#interfaceobject) and execute any krpano action code          |
