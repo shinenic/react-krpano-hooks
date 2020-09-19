@@ -1,5 +1,8 @@
 # React-krpano-hooks Change log
 
+## `v1.1.3` - Released on 2020/09/19
+  * Fix typo in readme
+
 ## `v1.1.2` - Released on 2020/09/19
   * Remove unused files
 
