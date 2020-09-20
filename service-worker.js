@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-krpano-hooks/precache-manifest.9909e184aeb2da1cf9524f3dcc5b4cc8.js"
+  "/react-krpano-hooks/precache-manifest.c0c04bf5c4d18445ea5e332de26427f6.js"
 );
 
 self.addEventListener('message', (event) => {
