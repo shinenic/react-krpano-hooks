@@ -2,18 +2,66 @@
   height: 100%;
   width: 100%;
 
-  .title {
-    font-size: 80px;
+  .title-section {
     text-align: center;
     height: 40vh;
-    line-height: 40vh;
+    padding: 6vh 0;
     margin-bottom: 30px;
     font-weight: bold;
     background-color: #333;
     color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @media only screen and (max-width: 700px) {
-      font-size: 30px;
+      padding: 10vh 0;
+    }
+
+
+    .title {
+      font-size: 80px;
+
+      @media only screen and (max-width: 700px) {
+        font-size: 30px;
+      }
+    }
+
+    .description {
+      font-size: 20px;
+
+      @media only screen and (max-width: 700px) {
+        font-size: 14px;
+      }
+    }
+
+    .logo-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      width: 250px;
+
+      & > img {
+        height: 50px;
+        position: relative;
+
+        &.krpano-logo {
+          height: 45px;
+        }
+
+        &.npm-logo {
+          height: 45px;
+        }
+
+        &:after {
+          content: "+";
+          color: white;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
     }
   }
 

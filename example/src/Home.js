@@ -1,11 +1,24 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
 import GithubLogo from './asset/github-logo.png'
+import ReactLogo from './asset/react-logo.png'
+import KrpanoLogo from './asset/krpano-logo.png'
+import NpmLogo from './asset/npm-logo.png'
 
 const Home = () => {
   return (
     <div className="home-page">
-      <div className="title">React-krpano-hooks</div>
+      <div className="title-section">
+        <div className="title">React-krpano-hooks</div>
+        <div className="logo-section">
+          <img className="react-logo" src={ReactLogo} alt="react logo" />
+          <img className="krpano-logo" src={KrpanoLogo} alt="krpano logo" />
+          <img className="npm-logo" src={NpmLogo} alt="npm logo" />
+        </div>
+        <div className="description">
+          A package migrates KRPano into React as a hook
+        </div>
+      </div>
       <div className="link-section">
         <a href="#demo">Demo</a>
         <a
