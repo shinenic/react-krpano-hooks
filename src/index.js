@@ -63,17 +63,20 @@ const useKrpano = (options = {}) => {
     setKrpanoState((state) => ({ ...state, isLoaded: true }))
   }
 
+  // Warn if gotten invalid options
   useEffect(() => {
     warnIfInvalidEmbeddingParams(embeddingParams)
     warnIfInvalidGlobalFunctions(globalFunctions)
   }, []) // eslint-disable-line
 
+  // Set container div `id` when ref is assigned
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.id = DEFAULT_TARGET_ID
     }
-  }, [containerRef.current])
+  }, [containerRef.current]) // eslint-disable-line
 
+  // Set container's height & width
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.style.height = height
@@ -81,6 +84,7 @@ const useKrpano = (options = {}) => {
     }
   }, [height, width])
 
+  // Embed krpano into html dom
   useEffect(() => {
     if (scriptLoaded && containerRef.current) {
       resetKrpanoState()
@@ -100,13 +104,12 @@ const useKrpano = (options = {}) => {
     }
   }, [scriptLoaded, embeddingParamsJsonString]) // eslint-disable-line
 
-  if (scriptError || !scriptLoaded) {
+  // Warn if load script path failed
+  useEffect(() => {
     if (scriptError) {
       console.error(`Error when load krpano script in path "${scriptPath}"`)
     }
-
-    return { krpanoState: { ...krpanoState, scriptLoaded }, containerRef }
-  }
+  }, [scriptError]) // eslint-disable-line
 
   return {
     krpanoState: { ...krpanoState, scriptLoaded },
