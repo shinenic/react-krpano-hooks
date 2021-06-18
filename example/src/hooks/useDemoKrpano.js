@@ -19,6 +19,8 @@ const useDemoKrpano = () => {
         setCurrentScene(scene)
       },
     },
+    width: '300px',
+    height: '300px',
   })
 
   // Debounce hide loading page
