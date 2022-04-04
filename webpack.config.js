@@ -1,4 +1,5 @@
 const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   mode: 'production',
@@ -27,6 +28,7 @@ module.exports = {
       react: path.resolve(__dirname, './node_modules/react'),
     },
   },
+  plugins: [new CleanWebpackPlugin()],
   externals: {
     react: {
       commonjs: 'react',
