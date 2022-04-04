@@ -22,6 +22,8 @@ const DEFAULT_SCRIPT_OPTION = {
   async: true,
 }
 
+const isProductionMode = process.env.NODE_ENV === 'production'
+
 /**
  * Krpano javascript interface: https://krpano.com/docu/js/#interfaceobject
  * Krpano call external script: https://krpano.com/docu/actions/#jscall
@@ -69,12 +71,20 @@ const useKrpano = (options = {}) => {
     warnIfInvalidGlobalFunctions(globalFunctions)
   }, []) // eslint-disable-line
 
+  useEffect(() => {
+    if (!containerRef.current && !isProductionMode) {
+      console.error(
+        'DOM not found, please assign the containerRef on a div to render it'
+      )
+    }
+  }, [])
+
   // Set container div `id` when ref is assigned
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.id = DEFAULT_TARGET_ID
     }
-  }, [containerRef.current]) // eslint-disable-line
+  }, [])
 
   // Set container's height & width
   useEffect(() => {
