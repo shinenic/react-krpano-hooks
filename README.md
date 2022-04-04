@@ -141,9 +141,9 @@ const {
 | krpanoState.isEmbedded     | Boolean  | `True` when the embedding is done,<br/>but the xml haven't finished yet                         |
 | krpanoState.isLoaded       | Boolean  | `True` after the xml loaded and parsed                                                          |
 | krpanoState.error          | String   | Error message from krpano xml,<br/>will be `null` when no error                                 |
-| setKrpano(variable, value) | Function | [Set](https://krpano.com/docu/js/#interfaceobject) the given krpano variable to the given value |
-| getKrpano(variable)        | Function | [Return](https://krpano.com/docu/js/#interfaceobject) the value of the given krpano variable    |
-| callKrpano(action)         | Function | [Call](https://krpano.com/docu/js/#interfaceobject) and execute any krpano action code          |
+| setKrpano(variable, value) | Function | [Set](https://krpano.com/docu/js/#interfaceobject) the given krpano variable to the given value (return `false` when krpano not loaded yet) |
+| getKrpano(variable)        | Function | [Return](https://krpano.com/docu/js/#interfaceobject) the value of the given krpano variable (return `false` when krpano not loaded yet)    |
+| callKrpano(action)         | Function | [Call](https://krpano.com/docu/js/#interfaceobject) and execute any krpano action code (return `false` when krpano not loaded yet)          |
 | spheretoscreenKrpano       | Function | Directly call the [spheretoscreen](https://krpano.com/docu/js/#interfaceobject) action          |
 | screentosphereKrpano       | Function | Directly call the [screentosphere](https://krpano.com/docu/actions/#screentosphere) action      |
 | lockView                   | Function | Lock whole view                                                                                 |
