@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "classnames": "^2.2.6",
     "lodash": "^4.17.20",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-krpano-hooks": "^1.1.2",
