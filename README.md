@@ -37,7 +37,7 @@ root
 │   └───krpano
 │       │   krpano.js
 │       │   tour.xml
-|       |   (plugings, panos, ...)
+|       |   (plugins, panos, ...)
 ...
 ```
 
@@ -46,7 +46,7 @@ root
 ```xml
 <krpano ... onstart="jscall(reactKrpano.onStart())">
   ...
-</krpanok>
+</krpano>
 ```
 * Create container dom with `ref` from `useKrpano`
 ```javascript
@@ -160,8 +160,8 @@ const {
 | handleLoaded    | Function | Execute when embedding finished                                                                                                                                                                                                                                                                                                                                                                   |
 | globalFunctions | Object   | Functions in this object will be registered as `js global variables`,<br/>you can call `jscall(reactKrpano.customFnc())` (or other name you assign in `globalVarName`)  in xml to execute global function<br/><br/>Note: `react-krpano-hooks` have `onStart` global function already, so set `onStart` into hooks will not work                                                                   |
 | globalVarName   | String   | Variable name used for global functions,<br/>default is `'reactKrpano'`                                                                                                                                                                                                                                                                                                                           |
-| height                |  String        |  KRPano continer's height, default is `100vh`                                                                                                                                                                                                                                                                                                                                                                                               |
-| width               |  String        |  KRPano continer's width, default is `100vw`                                                                                                                                                                                                                                                                                                                                                                                                 |
+| height                |  String        |  KRPano container's height, default is `100vh`                                                                                                                                                                                                                                                                                                                                                                                               |
+| width               |  String        |  KRPano container's width, default is `100vw`                                                                                                                                                                                                                                                                                                                                                                                                 |
 
 
 
@@ -207,7 +207,7 @@ Please ref [jscall](https://krpano.com/docu/actions/#jscall) and [jsget](https:/
 </body>
 ```
 
-### Pass krpano's variables into js function arugments
+### Pass krpano's variables into js function arguments
 Use the `calc()` action to build the Javascript call and pass krpano variables, for example:
 ```xml
 <action>
