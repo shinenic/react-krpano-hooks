@@ -3,8 +3,8 @@ import useKrpano from 'react-krpano-hooks'
 
 const useDemoKrpano = () => {
   const [showLoadingPage, setShowLoadingPage] = useState(true)
-  const [isLocked, setLockView] = useToggle(false)
-  const [isHideSpots, setHideSpots] = useToggle(false)
+  const [isLocked, setLockView] = useState(false)
+  const [isHideSpots, setHideSpots] = useState(false)
   const [currentScene, setCurrentScene] = useState('')
   const {
     containerRef,
