@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import useKrpano from 'react-krpano-hooks'
-import { useToggle } from 'react-use'
 
 const useDemoKrpano = () => {
   const [showLoadingPage, setShowLoadingPage] = useState(true)
-  const [isLocked, toggleLockView] = useToggle(false)
-  const [isHideSpots, toggleHideSpots] = useToggle(false)
+  const [isLocked, setLockView] = useState(false)
+  const [isHideSpots, setHideSpots] = useState(false)
   const [currentScene, setCurrentScene] = useState('')
   const {
     containerRef,
@@ -49,6 +48,9 @@ const useDemoKrpano = () => {
       callKrpano('toggleHotspotVisibility(1)')
     }
   }, [isHideSpots]) // eslint-disable-line
+  
+  const toggleLockView = () => setLockView(prev => !prev);
+  const toggleHideSpots = () => setHideSpots(prev => !prev);
 
   return {
     showLoadingPage,
