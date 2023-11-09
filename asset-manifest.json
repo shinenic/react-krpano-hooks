@@ -1,24 +1,22 @@
 {
   "files": {
-    "main.css": "/react-krpano-hooks/static/css/main.17e46536.chunk.css",
-    "main.js": "/react-krpano-hooks/static/js/main.fee02485.chunk.js",
-    "main.js.map": "/react-krpano-hooks/static/js/main.fee02485.chunk.js.map",
-    "runtime-main.js": "/react-krpano-hooks/static/js/runtime-main.9438f5ba.js",
-    "runtime-main.js.map": "/react-krpano-hooks/static/js/runtime-main.9438f5ba.js.map",
-    "static/js/2.cff8d0e3.chunk.js": "/react-krpano-hooks/static/js/2.cff8d0e3.chunk.js",
-    "static/js/2.cff8d0e3.chunk.js.map": "/react-krpano-hooks/static/js/2.cff8d0e3.chunk.js.map",
+    "main.css": "/react-krpano-hooks/static/css/main.a153626e.chunk.css",
+    "main.js": "/react-krpano-hooks/static/js/main.64807e26.chunk.js",
+    "main.js.map": "/react-krpano-hooks/static/js/main.64807e26.chunk.js.map",
+    "runtime-main.js": "/react-krpano-hooks/static/js/runtime-main.c2a1461b.js",
+    "runtime-main.js.map": "/react-krpano-hooks/static/js/runtime-main.c2a1461b.js.map",
+    "static/js/2.e00f9bc6.chunk.js": "/react-krpano-hooks/static/js/2.e00f9bc6.chunk.js",
+    "static/js/2.e00f9bc6.chunk.js.map": "/react-krpano-hooks/static/js/2.e00f9bc6.chunk.js.map",
     "index.html": "/react-krpano-hooks/index.html",
-    "precache-manifest.c0c04bf5c4d18445ea5e332de26427f6.js": "/react-krpano-hooks/precache-manifest.c0c04bf5c4d18445ea5e332de26427f6.js",
-    "service-worker.js": "/react-krpano-hooks/service-worker.js",
-    "static/css/main.17e46536.chunk.css.map": "/react-krpano-hooks/static/css/main.17e46536.chunk.css.map",
-    "static/js/2.cff8d0e3.chunk.js.LICENSE.txt": "/react-krpano-hooks/static/js/2.cff8d0e3.chunk.js.LICENSE.txt",
-    "static/media/krpano-logo.png": "/react-krpano-hooks/static/media/krpano-logo.1e01c9d9.png",
-    "static/media/react-logo.png": "/react-krpano-hooks/static/media/react-logo.7c0fdc49.png"
+    "static/css/main.a153626e.chunk.css.map": "/react-krpano-hooks/static/css/main.a153626e.chunk.css.map",
+    "static/js/2.e00f9bc6.chunk.js.LICENSE.txt": "/react-krpano-hooks/static/js/2.e00f9bc6.chunk.js.LICENSE.txt",
+    "static/media/krpano-logo.9696e0d8.png": "/react-krpano-hooks/static/media/krpano-logo.9696e0d8.png",
+    "static/media/react-logo.91928afa.png": "/react-krpano-hooks/static/media/react-logo.91928afa.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9438f5ba.js",
-    "static/js/2.cff8d0e3.chunk.js",
-    "static/css/main.17e46536.chunk.css",
-    "static/js/main.fee02485.chunk.js"
+    "static/js/runtime-main.c2a1461b.js",
+    "static/js/2.e00f9bc6.chunk.js",
+    "static/css/main.a153626e.chunk.css",
+    "static/js/main.64807e26.chunk.js"
   ]
 }
