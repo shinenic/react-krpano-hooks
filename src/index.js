@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { getOperations } from './operations'
 import {
   warnIfInvalidEmbeddingParams,
@@ -8,13 +8,11 @@ import useKrpanoScript from './useKrpanoScript'
 
 const KRPANO_SCRIPT_PATH = 'krpano/krpano.js'
 const KRPANO_XML_PATH = 'krpano/tour.xml'
-const DEFAULT_TARGET_ID = 'react-krpano'
 const DEFAULT_GLOBAL_VAR_NAME = 'reactKrpano'
 
 // ref: https://krpano.com/docu/html/
 const DEFAULT_EMBEDDING_PARAMS = {
   xml: KRPANO_XML_PATH,
-  target: 'react-krpano',
   html: 'prefer',
 }
 
@@ -23,6 +21,10 @@ const DEFAULT_SCRIPT_OPTION = {
 }
 
 const isProductionMode = process.env.NODE_ENV === 'production'
+
+const generateRandomId = (prefix = 'react-krpano-') => {
+  return prefix + Math.random().toString(36).substring(2, 9)
+}
 
 /**
  * Krpano javascript interface: https://krpano.com/docu/js/#interfaceobject
@@ -41,6 +43,15 @@ const useKrpano = (options = {}) => {
   } = options
 
   const containerRef = useRef(null)
+  
+  const defaultTargetId = useMemo(() => generateRandomId(), [])
+
+  const finalEmbeddingParams = {
+    ...DEFAULT_EMBEDDING_PARAMS,
+    target: defaultTargetId,
+    ...embeddingParams,
+  }
+  
   const [scriptLoaded, scriptError] = useKrpanoScript(scriptPath, {
     ...DEFAULT_SCRIPT_OPTION,
     ...scriptOptions,
@@ -82,9 +93,9 @@ const useKrpano = (options = {}) => {
   // Set container div `id` when ref is assigned
   useEffect(() => {
     if (containerRef.current) {
-      containerRef.current.id = embeddingParams.target || DEFAULT_TARGET_ID
+      containerRef.current.id = embeddingParams.target || defaultTargetId
     }
-  }, [])
+  }, [defaultTargetId])
 
   // Set container's height & width
   useEffect(() => {
@@ -100,8 +111,7 @@ const useKrpano = (options = {}) => {
       resetKrpanoState()
       window[globalVarName] = { ...globalFunctions, onStart }
       window.embedpano({
-        ...DEFAULT_EMBEDDING_PARAMS,
-        ...embeddingParams,
+        ...finalEmbeddingParams,
         onready: (krpano) => {
           setKrpanoInterface(krpano)
           setKrpanoState((state) => ({ ...state, isEmbedded: true }))
