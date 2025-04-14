@@ -3,6 +3,8 @@ React-krpano-hooks
 
 > A package migrates KRPano into React as a hook
 
+https://www.npmjs.com/package/react-krpano-hooks
+
 
 ## Prerequisite
 * react >= 16.8

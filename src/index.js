@@ -43,21 +43,24 @@ const useKrpano = (options = {}) => {
   } = options
 
   const containerRef = useRef(null)
-  
+
   const defaultTargetId = useMemo(() => generateRandomId(), [])
 
-  const finalEmbeddingParams = {
-    ...DEFAULT_EMBEDDING_PARAMS,
-    target: defaultTargetId,
-    ...embeddingParams,
-  }
-  
+  const finalEmbeddingParams = useMemo(
+    () => ({
+      ...DEFAULT_EMBEDDING_PARAMS,
+      target: defaultTargetId,
+      ...embeddingParams,
+    }),
+    [defaultTargetId, embeddingParams]
+  )
+
   const [scriptLoaded, scriptError] = useKrpanoScript(scriptPath, {
     ...DEFAULT_SCRIPT_OPTION,
     ...scriptOptions,
   })
   const [krpanoInterface, setKrpanoInterface] = useState(null)
-  const embeddingParamsJsonString = JSON.stringify(embeddingParams)
+  const embeddingParamsJsonString = JSON.stringify(finalEmbeddingParams)
   const [krpanoState, setKrpanoState] = useState({
     isEmbedded: false,
     isLoaded: false,
@@ -95,7 +98,7 @@ const useKrpano = (options = {}) => {
     if (containerRef.current) {
       containerRef.current.id = embeddingParams.target || defaultTargetId
     }
-  }, [defaultTargetId])
+  }, [defaultTargetId, embeddingParams.target])
 
   // Set container's height & width
   useEffect(() => {

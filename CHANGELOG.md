@@ -1,9 +1,10 @@
 # React-krpano-hooks Change log
 
+## `v2.1.0` - Released on 2025/04/14
+  * Support multiple instances
 
 ## `v2.0.0` - Released on 2022/04/04
   * Support types
-
 
 ## `v1.1.4` - Released on 2020/09/20
   * Add demo & example page
