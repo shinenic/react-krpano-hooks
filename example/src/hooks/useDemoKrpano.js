@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import useKrpano from 'react-krpano-hooks'
+import useKrpano from '@react-krpano-hooks'
 
 const useDemoKrpano = () => {
   const [showLoadingPage, setShowLoadingPage] = useState(true)
